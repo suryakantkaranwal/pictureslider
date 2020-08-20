@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-widht, initial-scale=1">
+	<title>Wallpaper Showcase</title>
+	<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+</head>
+	<style>
+		* {
+
+  box-sizing: border-box;
+}
+		body {
+			background-position:center;
+			background-size: cover;
+			background-image: url("bat.jpg");
+			font-family: 'Alata', sans-serif;
+  			margin: 0;
+		}
+
+		.logo h1{
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			height: 65px;
+			margin-left: 43%;
+			margin-right:42%;
+			background-image: url("marveldc.png");
+			font-size: 100%;
+		}
+		.container{
+			position: relative;
+			width: 60%;
+			height: 500px;
+			max-width: 1000px;
+			margin: 0 auto;
+			user-select: none;
+			box-shadow: 0px 0px 3px 1px #000000;
+			padding:4px;
+			box-sizing: border-box;
+		}
+		.container .imageContainer {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.pointer {
+			position: relative;
+			width: 80%;
+			height: 10%;
+			max-width: 1000x;
+			margin: 0 auto;
+			padding:4px;
+			margin-top: 3%;
+			box-shadow: 0px 0px 3px 1px #000000;
+			box-sizing: border-box;
+
+		}
+		.pointer .column {
+			display: inline;
+			padding-left: 3%;
+		}
+
+	    .prev,.next {
+		  cursor: pointer;
+		  position: absolute;
+		  top: 50%;
+		  width: auto;
+		  padding: 16px;
+		  margin-top: -50px;
+		  color:#ffffff;
+		  font-weight: bold;
+		  font-size: 30px;
+		  border-radius: 0 3px 3px 0;
+		  user-select: none;
+		  -webkit-user-select: none;
+		  transition:0.8s ease;
+		}
+
+		.next {
+		  right: 0;
+		  border-radius: 3px 0 0 3px;
+		}
+
+		.prev:hover,
+		.next:hover {
+		  background-color: rgba(0, 0, 0, 0.8);
+		}
+
+	    .slideNumber {
+	    	font-weight: bold;
+	    	position: absolute;
+	    	margin-top: 0px;
+	    	color:#ffffff;
+			  font-size: 15px;
+			  padding: 8px 12px;
+	    }
+
+	    .demo {
+  				opacity: 0.6;
+              }
+
+              .active,.demo:hover {
+  							opacity: 1;
+								}
+			.cursor {
+			  cursor: pointer;
+			}
+
+
+			.captionContainer{
+				color: #ffffff;
+				position: absolute;
+			}
+
+			img {
+			  vertical-align: middle;
+			}
+
+	</style>
+</head>
+<body>
+	<div class="logo">
+		<h1 style="text-align: center; color:#ffffff;"></h1>
+	</div>
+	<div class="container">
+		
+
+	   <div class="imageContainer">
+	   	<a class="prev" onclick="plusSlides(-1)">❮</a>
+		<a class="next" onclick="plusSlides(1)">❯</a>
+
+		<div class="slides">
+			<div class="slideNumber">1/7</div>
+			<img src="ironman2.jpg" style="width: 100%;" alt="Ironman">
+		</div>
+
+		<div class="slides">
+			<div class="slideNumber">2/7</div>
+			<img src="Avengers.jfif" style="width: 100%" alt="Avengers">
+		</div>
+
+		<div class="slides">
+			<div class="slideNumber">3/7</div>
+			<img src="justice.jpg" style="width: 100%" alt="Justice league">
+		</div>
+
+		<div class="slides">
+			<div class="slideNumber">4/7</div>
+			<img src="black_panther.jpg" style="width: 100%" alt="Black panther">
+		</div>
+
+		<div class="slides">
+			<div class="slideNumber">5/7</div>
+			<img src="captainMarvel.jpg" style="width: 100%" alt="Captian marvel">
+		</div>
+
+		<div class="slides">
+			<div class="slideNumber">6/7</div>
+			<img src="superman.jpg" style="width: 100%" alt="Super-man">
+		</div>
+
+		<div class="slides">
+			<div class="slideNumber">7/7</div>
+			<img src="blackwidow1.jpg" style="width: 100%" alt="Black Widow">
+		</div>
+	    </div>
+		 <div class="captionContainer">
+          <p id="caption"></p>
+  		</div>
+  	    </div>
+<div class="pointer">
+	<div class="row">
+     <div class="column">
+      <img class="demo cursor" src="ironman2.jpg" style="width: 10%; "onclick="currentSlide(1)" alt="Ironman">
+     </div>
+    <div class="column">
+      <img class="demo cursor" src="Avengers.jfif" style="width: 10%" onclick="currentSlide(2)" alt="Avengers">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="justice.jpg" style="width:10%" onclick="currentSlide(3)" alt="Justice League">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="black_panther.jpg" style="width:10% " onclick="currentSlide(4)" alt="Black Panthet">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="captainMarvel.jpg" style="width:10%" onclick="currentSlide(5)" alt="Captian marvel">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="superman.jpg" style="width:10%" onclick="currentSlide(6)" alt="Super-man">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="blackwidow1.jpg" style="width:10%" onclick="currentSlide(7)" alt="Black Widow">
+    </div> 
+  </div>
+</div>
+</div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+</body>
+</html>
